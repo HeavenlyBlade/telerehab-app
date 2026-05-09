@@ -11,7 +11,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://*.vercel.app",  # allows all vercel deployments
+        "https://telerehab-app.vercel.app",  # allows all vercel deployments
     ],
     allow_credentials=True,
     allow_methods=["*"],
