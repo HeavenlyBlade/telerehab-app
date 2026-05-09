@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api'  // Uses the proxy we set up in vite.config.js
+  baseURL: import.meta.env.VITE_API_URL || '/api'
 })
 
 export const registerUser = async (data) => {
