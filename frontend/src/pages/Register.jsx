@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { registerUser } from '../api/auth'
+import VideoBackground from '../components/VideoBackground'
 
 export default function Register() {
   const navigate = useNavigate()
@@ -27,18 +28,21 @@ export default function Register() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <VideoBackground />
 
+      <div className="w-full max-w-md relative z-10">
+
+        {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4 shadow-lg">
             <span className="text-3xl">🏥</span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-800">TeleRehab</h1>
-          <p className="text-gray-500 text-sm mt-1">Start your recovery journey today</p>
+          <h1 className="text-2xl font-bold text-white">TeleRehab</h1>
+          <p className="text-white/70 text-sm mt-1">Start your recovery journey today</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
           <h2 className="text-xl font-bold text-gray-800 mb-1">Create Account</h2>
           <p className="text-gray-500 text-sm mb-6">Register to access your rehabilitation program</p>
 
@@ -88,9 +92,11 @@ export default function Register() {
               />
             </div>
 
-            <div className="bg-blue-50 rounded-xl p-4">
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
               <p className="text-xs text-blue-700 font-medium">ℹ️ Patient Registration</p>
-              <p className="text-xs text-blue-600 mt-1">This form is for patients only. Therapist accounts are created by administrators.</p>
+              <p className="text-xs text-blue-600 mt-1">
+                This form is for patients only. Therapist accounts are created by administrators.
+              </p>
             </div>
 
             <button
@@ -117,6 +123,10 @@ export default function Register() {
             </Link>
           </p>
         </div>
+
+        <p className="text-center text-xs text-white/50 mt-4">
+          Secure • Private • HIPAA-friendly
+        </p>
       </div>
     </div>
   )
