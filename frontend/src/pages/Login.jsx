@@ -39,8 +39,8 @@ export default function Login() {
       <div className="w-full max-w-md relative z-10">
         {/* Logo area */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4 shadow-lg">
-            <span className="text-3xl">🏥</span>
+          <div className="inline-flex items-center justify-center w-30 h-30 rounded-2xl mb-4 shadow-lg">
+            <img src="logo.png" alt="/videos/logo.png" />
           </div>
           <h1 className="text-2xl font-bold text-white">TeleRehab</h1>
           <p className="text-white/70 text-sm mt-1">Your recovery, from home</p>
