@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { registerUser } from '../api/auth'
 import VideoBackground from '../components/VideoBackground'
+import PasswordInput from '../components/PasswordInput'
 
 export default function Register() {
   const navigate = useNavigate()
@@ -32,11 +33,9 @@ export default function Register() {
       <VideoBackground />
 
       <div className="w-full max-w-md relative z-10">
-
-        {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-30 h-30 rounded-2xl mb-4 shadow-lg">
-            <img src="logo.png" alt="/videos/logo.png" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4 shadow-lg">
+            <span className="text-3xl">🏥</span>
           </div>
           <h1 className="text-2xl font-bold text-white">TeleRehab</h1>
           <p className="text-white/70 text-sm mt-1">Start your recovery journey today</p>
@@ -81,14 +80,10 @@ export default function Register() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-              <input
+              <PasswordInput
                 name="password"
-                type="password"
-                required
                 value={form.password}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="••••••••"
               />
             </div>
 

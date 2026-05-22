@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 import VideoBackground from './VideoBackground'
+import ConfirmDialog from './ConfirmDialog'
 
 export default function Layout({ children }) {
   const navigate = useNavigate()
   const location = useLocation()
   const user = JSON.parse(localStorage.getItem('user') || '{}')
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
 
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -29,8 +31,8 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex">
 
-      {/* Video background — light overlay for dashboard */}
-      <VideoBackground overlay="bg-white/40" />
+      {/* Video background */}
+      <VideoBackground overlay="bg-white/60" />
 
       {/* Mobile overlay */}
       {sidebarOpen && (
@@ -73,7 +75,7 @@ export default function Layout({ children }) {
         <div className="p-4 border-t border-gray-200">
           <p className="text-xs text-gray-500 mb-2 truncate">{user.full_name}</p>
           <button
-            onClick={handleLogout}
+            onClick={() => setShowLogoutConfirm(true)}
             className="w-full text-sm text-red-500 hover:text-red-600 text-left px-2 py-1 rounded hover:bg-red-50 transition"
           >
             Log out
@@ -101,6 +103,21 @@ export default function Layout({ children }) {
           {children}
         </main>
       </div>
+
+      {/* Logout confirmation */}
+      <ConfirmDialog
+        isOpen={showLogoutConfirm}
+        title="Log Out"
+        message="Are you sure you want to log out of TeleRehab?"
+        confirmText="Yes, Log Out"
+        cancelText="Stay"
+        danger={true}
+        onConfirm={() => {
+          setShowLogoutConfirm(false)
+          handleLogout()
+        }}
+        onCancel={() => setShowLogoutConfirm(false)}
+      />
     </div>
   )
 }
