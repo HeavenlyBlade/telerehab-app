@@ -73,7 +73,7 @@ export default function TherapistDashboard() {
       </div>
 
       {/* Patient list */}
-      <div className="bg-white border border-gray-200 rounded-2xl p-6">
+      <div className="glass-card rounded-2xl p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-semibold text-gray-800">Your Patients</h3>
           <Link to="/therapist/patients" className="text-sm text-blue-600 hover:underline">View all →</Link>

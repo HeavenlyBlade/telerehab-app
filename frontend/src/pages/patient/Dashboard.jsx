@@ -77,7 +77,7 @@ export default function PatientDashboard() {
       </div>
 
       {assignments.length === 0 ? (
-        <div className="bg-white border border-gray-200 rounded-2xl p-12 text-center">
+        <div className="glass-card rounded-2xl p-12 text-center">
           <div className="text-6xl mb-4">🏥</div>
           <h3 className="font-semibold text-gray-700 mb-2">No exercises yet</h3>
           <p className="text-gray-400 text-sm">Your therapist will assign exercises to your program soon.</p>
@@ -86,7 +86,7 @@ export default function PatientDashboard() {
       ) : (
         <div className="grid grid-cols-1 gap-4">
           {assignments.map(a => (
-            <div key={a.id} className="bg-white border border-gray-200 rounded-2xl p-5 hover:border-blue-200 hover:shadow-sm transition">
+            <div key={a.id} className="glass-card rounded-2xl p-5 hover:border-blue-200 hover:shadow-sm transition">
               <div className="flex justify-between items-start gap-4">
                 <div className="flex gap-4 flex-1">
                   {/* Icon */}
