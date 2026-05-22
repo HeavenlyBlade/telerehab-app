@@ -30,7 +30,7 @@ export default function Layout({ children }) {
     <div className="min-h-screen flex">
 
       {/* Video background — light overlay for dashboard */}
-      <VideoBackground overlay="bg-white/60" />
+      <VideoBackground overlay="bg-white/40" />
 
       {/* Mobile overlay */}
       {sidebarOpen && (
